@@ -2,30 +2,46 @@
 <head>
     <title>HTML Code Examples</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
-        h2 { color: #333; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        h2 {
+            color: #333;
+        }
     </style>
 </head>
 <body>
-    <h1>Copy HTML Code Examples</h1><h2>1. Factorial Calculation in JavaScript</h2>
-<pre>
-
-<!DOCTYPE html> <html> <head> <title>Factorial of a Number</title> </head> <body> <script> var n, factorial = 1; n = parseInt(prompt("Enter a number:"));
-
-if (n &lt; 0) {
-        document.write("Factorial is not defined for negative numbers.");
-    } else {
-        for (let i = 1; i &lt;= n; i++) {
-            factorial *= i;
+    <h2>1. Factorial Calculation in JavaScript</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Factorial of a Number&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;script&gt;
+        var n = parseInt(prompt("Enter a number:")), factorial = 1;
+        if (n &lt; 0) {
+            document.write("Factorial is not defined for negative numbers.");
+        } else {
+            for (let i = 1; i &lt;= n; i++) {
+                factorial *= i;
+            }
+            document.write("Factorial of " + n + " is " + factorial);
         }
-        document.write("Factorial of " + n + " is " + factorial);
-    }
-&lt;/script&gt;
-
-</body> </html> </pre>
-
-<h2>2. Inline CSS Example</h2>
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre><h2>2. Inline CSS Example</h2>
 <pre>
 
 <!DOCTYPE html> <html> <head> <title>Inline CSS Example</title> </head> <body> <h1 style="color: blue;">Hello, world!</h1> <p style="font-size: 20px; color: green;">This is a paragraph with inline CSS.</p> </body> </html> </pre>
@@ -33,27 +49,7 @@ if (n &lt; 0) {
 <h2>3. Unordered List Example</h2>
 <pre>
 
-<!DOCTYPE html> <html> <head> <title>Unordered List</title> </head> <body> <h5>There are three types of unordered lists:</h5>
-
-&lt;h5&gt;Circle:&lt;/h5&gt;
-&lt;ul type="circle"&gt;
-    &lt;li&gt;Apple&lt;/li&gt;
-    &lt;li&gt;Mango&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;Disc:&lt;/h5&gt;
-&lt;ul type="disc"&gt;
-    &lt;li&gt;Rose&lt;/li&gt;
-    &lt;li&gt;Lotus&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5&gt;Square:&lt;/h5&gt;
-&lt;ul type="square"&gt;
-    &lt;li&gt;Moon&lt;/li&gt;
-    &lt;li&gt;Star&lt;/li&gt;
-&lt;/ul&gt;
-
-</body> </html> </pre>
+<!DOCTYPE html> <html> <head> <title>Unordered List</title> </head> <body> <h5>There are three types of unordered lists:</h5> <h5>Circle:</h5> <ul type="circle"> <li>Apple</li> <li>Mango</li> </ul> <h5>Disc:</h5> <ul type="disc"> <li>Rose</li> <li>Lotus</li> </ul> <h5>Square:</h5> <ul type="square"> <li>Moon</li> <li>Star</li> </ul> </body> </html> </pre>
 
 </body>
 </html>
