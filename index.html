@@ -168,42 +168,6 @@
 &lt;html&gt;
 &lt;head&gt;
   &lt;title&gt;Factorial Calculator&lt;/title&gt;
-  &lt;style&gt;
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .calculator {
-      background-color: #f5f5f5;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #333;
-      text-align: center;
-    }
-    input, button {
-      padding: 8px;
-      margin: 5px 0;
-    }
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    .result {
-      margin-top: 15px;
-      font-weight: bold;
-    }
-  &lt;/style&gt;
   &lt;script&gt;
     function calculateFactorial() {
       var n = parseInt(document.getElementById('factorialInput').value);
@@ -239,22 +203,20 @@
 &lt;/html&gt;</pre>
     </div>
     <div id="example1-result" class="tab-content result-container" style="display: none;">
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <div style="background-color: #f5f5f5; border-radius: 8px; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-          <h1 style="color: #333; text-align: center;">Factorial Calculator</h1>
-          <div>
-            <input type="number" id="factorialInput" placeholder="Enter a number" style="padding: 8px; margin: 5px 0;">
-            <button onclick="calculateFactorial()" style="padding: 8px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">Calculate</button>
-          </div>
-          <div id="factorialResult" style="margin-top: 15px; font-weight: bold;"></div>
+      <div>
+        <h1>Factorial Calculator</h1>
+        <div>
+          <input type="number" id="factorialInput" placeholder="Enter a number">
+          <button onclick="calculateFactorial()">Calculate</button>
         </div>
+        <div id="factorialResult"></div>
       </div>
     </div>
   </div>
   
   <div id="example2" class="code-container">
     <div class="code-header">
-      <h2>2. Inline CSS Example</h2>
+      <h2>2. HTML Structure Example</h2>
       <button class="copy-btn" data-target="inlineCssCode" onclick="copyCode('inlineCssCode')">Copy Code</button>
     </div>
     <div class="tabs">
@@ -265,63 +227,61 @@
       <pre id="inlineCssCode">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-  &lt;title&gt;Inline CSS Example&lt;/title&gt;
+  &lt;title&gt;HTML Structure Example&lt;/title&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;"&gt;
-    &lt;header style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;"&gt;
-      &lt;h1 style="color: blue; font-size: 36px; margin-bottom: 10px;"&gt;Hello, world!&lt;/h1&gt;
+  &lt;div&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Hello, world!&lt;/h1&gt;
     &lt;/header&gt;
     
     &lt;main&gt;
-      &lt;p style="font-size: 20px; color: green; line-height: 1.5; margin-bottom: 20px;"&gt;
-        This is a paragraph with inline CSS. Inline styles are applied directly to HTML elements
-        using the style attribute.
+      &lt;p&gt;
+        This is a paragraph that explains HTML structure. HTML elements are the building blocks
+        of webpages.
       &lt;/p&gt;
       
-      &lt;div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; border-left: 4px solid #4CAF50;"&gt;
-        &lt;h2 style="color: #333; font-size: 24px; margin-top: 0;"&gt;About Inline CSS&lt;/h2&gt;
-        &lt;p style="color: #555; margin-bottom: 0;"&gt;
-          Inline CSS uses the style attribute of an HTML element to apply styles directly.
-          While it's not the best practice for large projects, it can be useful for small examples
-          and email templates.
+      &lt;div&gt;
+        &lt;h2&gt;About HTML Structure&lt;/h2&gt;
+        &lt;p&gt;
+          HTML documents are structured with elements like header, main content area, and footer.
+          This makes content organization logical and improves accessibility.
         &lt;/p&gt;
       &lt;/div&gt;
     &lt;/main&gt;
     
-    &lt;footer style="margin-top: 30px; text-align: center; font-size: 14px; color: #777; border-top: 1px solid #eee; padding-top: 10px;"&gt;
-      Inline CSS Example - Created for demonstration purposes
+    &lt;footer&gt;
+      HTML Structure Example - Created for demonstration purposes
     &lt;/footer&gt;
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
     </div>
     <div id="example2-result" class="tab-content result-container" style="display: none;">
-      <div style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif;">
-        <header style="text-align: center; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-          <h1 style="color: blue; font-size: 36px; margin-bottom: 10px;">Hello, world!</h1>
+      <div>
+        <header>
+          <h1>Hello, world!</h1>
         </header>
         
         <main>
-          <p style="font-size: 20px; color: green; line-height: 1.5; margin-bottom: 20px;">
-            This is a paragraph with inline CSS. Inline styles are applied directly to HTML elements
-            using the style attribute.
+          <p>
+            This is a paragraph that explains HTML structure. HTML elements are the building blocks
+            of webpages.
           </p>
           
-          <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; border-left: 4px solid #4CAF50;">
-            <h2 style="color: #333; font-size: 24px; margin-top: 0;">About Inline CSS</h2>
-            <p style="color: #555; margin-bottom: 0;">
-              Inline CSS uses the style attribute of an HTML element to apply styles directly.
-              While it's not the best practice for large projects, it can be useful for small examples
-              and email templates.
+          <div>
+            <h2>About HTML Structure</h2>
+            <p>
+              HTML documents are structured with elements like header, main content area, and footer.
+              This makes content organization logical and improves accessibility.
             </p>
           </div>
         </main>
         
-        <footer style="margin-top: 30px; text-align: center; font-size: 14px; color: #777; border-top: 1px solid #eee; padding-top: 10px;">
-          Inline CSS Example - Created for demonstration purposes
+        <footer>
+          HTML Structure Example - Created for demonstration purposes
         </footer>
       </div>
     </div>
@@ -343,60 +303,9 @@
   &lt;title&gt;HTML List Examples&lt;/title&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  &lt;style&gt;
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    
-    .container {
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    
-    h1 {
-      color: #333;
-      text-align: center;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-    }
-    
-    h2 {
-      color: #4CAF50;
-      margin-top: 25px;
-      margin-bottom: 10px;
-    }
-    
-    .list-example {
-      margin-bottom: 30px;
-      padding: 15px;
-      background-color: white;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-    }
-    
-    .list-title {
-      font-weight: bold;
-      color: #555;
-      margin-bottom: 10px;
-    }
-    
-    ul {
-      margin: 10px 0;
-    }
-    
-    li {
-      margin-bottom: 5px;
-    }
-  &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div class="container"&gt;
+  &lt;div&gt;
     &lt;h1&gt;HTML List Examples&lt;/h1&gt;
     
     &lt;p&gt;
@@ -404,9 +313,9 @@
       different types of unordered lists with various bullet styles.
     &lt;/p&gt;
     
-    &lt;div class="list-example"&gt;
+    &lt;div&gt;
       &lt;h2&gt;Circle Bullets&lt;/h2&gt;
-      &lt;div class="list-title"&gt;Fruits&lt;/div&gt;
+      &lt;div&gt;Fruits&lt;/div&gt;
       &lt;ul type="circle"&gt;
         &lt;li&gt;Apple&lt;/li&gt;
         &lt;li&gt;Mango&lt;/li&gt;
@@ -415,9 +324,9 @@
       &lt;/ul&gt;
     &lt;/div&gt;
     
-    &lt;div class="list-example"&gt;
+    &lt;div&gt;
       &lt;h2&gt;Disc Bullets (Default)&lt;/h2&gt;
-      &lt;div class="list-title"&gt;Flowers&lt;/div&gt;
+      &lt;div&gt;Flowers&lt;/div&gt;
       &lt;ul type="disc"&gt;
         &lt;li&gt;Rose&lt;/li&gt;
         &lt;li&gt;Lotus&lt;/li&gt;
@@ -426,9 +335,9 @@
       &lt;/ul&gt;
     &lt;/div&gt;
     
-    &lt;div class="list-example"&gt;
+    &lt;div&gt;
       &lt;h2&gt;Square Bullets&lt;/h2&gt;
-      &lt;div class="list-title"&gt;Celestial Objects&lt;/div&gt;
+      &lt;div&gt;Celestial Objects&lt;/div&gt;
       &lt;ul type="square"&gt;
         &lt;li&gt;Moon&lt;/li&gt;
         &lt;li&gt;Star&lt;/li&gt;
@@ -441,17 +350,17 @@
 &lt;/html&gt;</pre>
     </div>
     <div id="example3-result" class="tab-content result-container" style="display: none;">
-      <div class="container" style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; line-height: 1.6;">
-        <h1 style="color: #333; text-align: center; border-bottom: 2px solid #eee; padding-bottom: 10px;">HTML List Examples</h1>
+      <div>
+        <h1>HTML List Examples</h1>
         
         <p>
           Lists are essential HTML elements for organizing information. Here are examples of 
           different types of unordered lists with various bullet styles.
         </p>
         
-        <div style="margin-bottom: 30px; padding: 15px; background-color: white; border-radius: 5px; border: 1px solid #ddd;">
-          <h2 style="color: #4CAF50; margin-top: 5px; margin-bottom: 10px;">Circle Bullets</h2>
-          <div style="font-weight: bold; color: #555; margin-bottom: 10px;">Fruits</div>
+        <div>
+          <h2>Circle Bullets</h2>
+          <div>Fruits</div>
           <ul type="circle">
             <li>Apple</li>
             <li>Mango</li>
@@ -460,9 +369,9 @@
           </ul>
         </div>
         
-        <div style="margin-bottom: 30px; padding: 15px; background-color: white; border-radius: 5px; border: 1px solid #ddd;">
-          <h2 style="color: #4CAF50; margin-top: 5px; margin-bottom: 10px;">Disc Bullets (Default)</h2>
-          <div style="font-weight: bold; color: #555; margin-bottom: 10px;">Flowers</div>
+        <div>
+          <h2>Disc Bullets (Default)</h2>
+          <div>Flowers</div>
           <ul type="disc">
             <li>Rose</li>
             <li>Lotus</li>
@@ -471,9 +380,9 @@
           </ul>
         </div>
         
-        <div style="margin-bottom: 30px; padding: 15px; background-color: white; border-radius: 5px; border: 1px solid #ddd;">
-          <h2 style="color: #4CAF50; margin-top: 5px; margin-bottom: 10px;">Square Bullets</h2>
-          <div style="font-weight: bold; color: #555; margin-bottom: 10px;">Celestial Objects</div>
+        <div>
+          <h2>Square Bullets</h2>
+          <div>Celestial Objects</div>
           <ul type="square">
             <li>Moon</li>
             <li>Star</li>
@@ -487,7 +396,7 @@
   
   <div id="example4" class="code-container">
     <div class="code-header">
-      <h2>4. Professional Password Validation</h2>
+      <h2>4. Simple Password Check</h2>
       <button class="copy-btn" data-target="passwordCode" onclick="copyCode('passwordCode')">Copy Code</button>
     </div>
     <div class="tabs">
@@ -498,260 +407,40 @@
       <pre id="passwordCode">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;Password Validation&lt;/title&gt;
-    &lt;style&gt;
-        .password-container {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            color: #333;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        .form-control:focus {
-            border-color: #4CAF50;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
-        }
-        
-        .btn-submit {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            font-size: 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .btn-submit:hover {
-            background-color: #45a049;
-        }
-        
-        .password-strength {
-            margin-top: 5px;
-            height: 5px;
-            background-color: #eee;
-            border-radius: 3px;
-        }
-        
-        .strength-meter {
-            height: 100%;
-            border-radius: 3px;
-            transition: width 0.3s, background-color 0.3s;
-        }
-        
-        .password-feedback {
-            margin-top: 5px;
-            font-size: 12px;
-            color: #666;
-        }
-        
-        .requirements {
-            margin-top: 10px;
-            font-size: 12px;
-            color: #666;
-        }
-        
-        .requirements ul {
-            padding-left: 20px;
-            margin: 5px 0;
-        }
-        
-        .valid {
-            color: #4CAF50;
-        }
-        
-        .invalid {
-            color: #f44336;
-        }
-    &lt;/style&gt;
-    &lt;script&gt;
-        function validatePassword() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            const requirementsList = document.querySelectorAll('.requirement');
-            
-            // Check requirements
-            const hasLength = password.length >= 8;
-            const hasLower = /[a-z]/.test(password);
-            const hasUpper = /[A-Z]/.test(password);
-            const hasNumber = /\d/.test(password);
-            const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-            
-            // Update requirements display
-            requirementsList[0].className = 'requirement ' + (hasLength ? 'valid' : 'invalid');
-            requirementsList[1].className = 'requirement ' + (hasLower ? 'valid' : 'invalid');
-            requirementsList[2].className = 'requirement ' + (hasUpper ? 'valid' : 'invalid');
-            requirementsList[3].className = 'requirement ' + (hasNumber ? 'valid' : 'invalid');
-            requirementsList[4].className = 'requirement ' + (hasSpecial ? 'valid' : 'invalid');
-            
-            // Calculate strength
-            let strength = 0;
-            if (hasLength) strength += 20;
-            if (hasLower) strength += 20;
-            if (hasUpper) strength += 20;
-            if (hasNumber) strength += 20;
-            if (hasSpecial) strength += 20;
-            
-            // Update strength meter
-            const strengthMeter = document.querySelector('.strength-meter');
-            strengthMeter.style.width = strength + '%';
-            
-            if (strength <= 40) {
-                strengthMeter.style.backgroundColor = '#f44336'; // red
-                document.getElementById('strengthText').textContent = 'Weak';
-                document.getElementById('strengthText').className = 'invalid';
-            } else if (strength <= 80) {
-                strengthMeter.style.backgroundColor = '#FF9800'; // orange
-                document.getElementById('strengthText').textContent = 'Moderate';
-                document.getElementById('strengthText').className = '';
+    &lt;title&gt;Password Check&lt;/title&gt;
+    &lt;script type="text/javascript"&gt;
+        function chkPass() {
+            var first = document.frm.pass1.value;
+            var second = document.frm.pass2.value;
+
+            if (first == second) {
+                return true;
             } else {
-                strengthMeter.style.backgroundColor = '#4CAF50'; // green
-                document.getElementById('strengthText').textContent = 'Strong';
-                document.getElementById('strengthText').className = 'valid';
-            }
-            
-            // Check if passwords match
-            const passwordMatch = password === confirmPassword;
-            if (confirmPassword) {
-                if (passwordMatch) {
-                    document.getElementById('passwordMatchFeedback').textContent = 'Passwords match';
-                    document.getElementById('passwordMatchFeedback').className = 'password-feedback valid';
-                } else {
-                    document.getElementById('passwordMatchFeedback').textContent = 'Passwords do not match';
-                    document.getElementById('passwordMatchFeedback').className = 'password-feedback invalid';
-                }
-            } else {
-                document.getElementById('passwordMatchFeedback').textContent = '';
-            }
-            
-            return strength >= 60 && passwordMatch;
-        }
-        
-        function submitForm(event) {
-            if (!validatePassword()) {
-                event.preventDefault();
-                alert("Please ensure your password meets all requirements and both passwords match.");
+                alert("Both Passwords should be the Same");
                 return false;
             }
-            alert("Form submitted successfully! (This is just a demo)");
-            return false; // Prevent actual form submission for this demo
         }
     &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;div class="password-container"&gt;
-        &lt;h2 style="text-align: center; color: #333;"&gt;Create Account&lt;/h2&gt;
-        &lt;form id="passwordForm" onsubmit="return submitForm(event)"&gt;
-            &lt;div class="form-group"&gt;
-                &lt;label for="username"&gt;Username&lt;/label&gt;
-                &lt;input type="text" id="username" class="form-control" required&gt;
-            &lt;/div&gt;
-            
-            &lt;div class="form-group"&gt;
-                &lt;label for="password"&gt;Password&lt;/label&gt;
-                &lt;input type="password" id="password" class="form-control" 
-                       onkeyup="validatePassword()" required&gt;
-                &lt;div class="password-strength"&gt;
-                    &lt;div class="strength-meter"&gt;&lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class="password-feedback"&gt;
-                    Strength: &lt;span id="strengthText"&gt;&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;div class="requirements"&gt;
-                    Password requirements:
-                    &lt;ul&gt;
-                        &lt;li class="requirement"&gt;At least 8 characters&lt;/li&gt;
-                        &lt;li class="requirement"&gt;At least one lowercase letter&lt;/li&gt;
-                        &lt;li class="requirement"&gt;At least one uppercase letter&lt;/li&gt;
-                        &lt;li class="requirement"&gt;At least one number&lt;/li&gt;
-                        &lt;li class="requirement"&gt;At least one special character&lt;/li&gt;
-                    &lt;/ul&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            
-            &lt;div class="form-group"&gt;
-                &lt;label for="confirmPassword"&gt;Confirm Password&lt;/label&gt;
-                &lt;input type="password" id="confirmPassword" class="form-control" 
-                       onkeyup="validatePassword()" required&gt;
-                &lt;div id="passwordMatchFeedback" class="password-feedback"&gt;&lt;/div&gt;
-            &lt;/div&gt;
-            
-            &lt;div class="form-group"&gt;
-                &lt;button type="submit" class="btn-submit"&gt;Create Account&lt;/button&gt;
-            &lt;/div&gt;
-        &lt;/form&gt;
-    &lt;/div&gt;
+    &lt;form name="frm" action="#" onsubmit="return chkPass()"&gt;
+        &lt;font size="6"&gt;
+            Enter Password: &lt;input type="password" name="pass1"/&gt;&lt;br&gt;
+            Confirm Password: &lt;input type="password" name="pass2"/&gt;&lt;br&gt;
+            &lt;input type="submit" value="Submit"/&gt;
+        &lt;/font&gt;
+    &lt;/form&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
     </div>
     <div id="example4-result" class="tab-content result-container" style="display: none;">
-      <div class="password-container">
-        <h2 style="text-align: center; color: #333;">Create Account</h2>
-        <form id="passwordForm" onsubmit="return submitForm(event)">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" class="form-control" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" 
-                       onkeyup="validatePassword()" required>
-                <div class="password-strength">
-                    <div class="strength-meter"></div>
-                </div>
-                <div class="password-feedback">
-                    Strength: <span id="strengthText"></span>
-                </div>
-                <div class="requirements">
-                    Password requirements:
-                    <ul>
-                        <li class="requirement">At least 8 characters</li>
-                        <li class="requirement">At least one lowercase letter</li>
-                        <li class="requirement">At least one uppercase letter</li>
-                        <li class="requirement">At least one number</li>
-                        <li class="requirement">At least one special character</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" class="form-control" 
-                       onkeyup="validatePassword()" required>
-                <div id="passwordMatchFeedback" class="password-feedback"></div>
-            </div>
-            
-            <div class="form-group">
-                <button type="submit" class="btn-submit">Create Account</button>
-            </div>
-        </form>
-      </div>
+      <form name="frm" action="#" onsubmit="return chkPass()">
+        <font size="6">
+          Enter Password: <input type="password" name="pass1"/><br>
+          Confirm Password: <input type="password" name="pass2"/><br>
+          <input type="submit" value="Submit"/>
+        </font>
+      </form>
     </div>
   </div>
 </body>
