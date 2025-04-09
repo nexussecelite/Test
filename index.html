@@ -1,401 +1,707 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>HTML Examples</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .code-container {
-      position: relative;
-      margin-bottom: 40px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    .code-header {
-      background-color: #f5f5f5;
-      padding: 10px 15px;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    pre {
-      background-color: #f8f8f8;
-      padding: 15px;
-      margin: 0;
-      overflow-x: auto;
-      font-size: 14px;
-    }
-    .result-container {
-      padding: 15px;
-      border-top: 1px solid #ddd;
-      background-color: #fff;
-    }
-    .copy-btn {
-      padding: 5px 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    .copy-btn:hover {
-      background-color: #45a049;
-    }
-    h1 {
-      color: #333;
-      text-align: center;
-    }
-    h2 {
-      margin: 0;
-      color: #333;
-    }
-    .tabs {
-      display: flex;
-      border-bottom: 1px solid #ddd;
-    }
-    .tab {
-      padding: 8px 15px;
-      cursor: pointer;
-      background-color: #f5f5f5;
-      border: 1px solid #ddd;
-      border-bottom: none;
-      border-radius: 5px 5px 0 0;
-      margin-right: 5px;
-    }
-    .tab.active {
-      background-color: #fff;
-      border-bottom: 1px solid #fff;
-      margin-bottom: -1px;
-    }
-    .factorial-demo {
-      margin-top: 15px;
-    }
-    input, button {
-      padding: 5px;
-      margin-right: 5px;
-    }
-    .result {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-  </style>
-  <script>
-    function copyCode(id) {
-      const codeBlock = document.getElementById(id);
-      const textArea = document.createElement('textarea');
-      textArea.value = codeBlock.textContent;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      
-      // Show "Copied!" message
-      const copyBtn = document.querySelector(`button[data-target="${id}"]`);
-      const originalText = copyBtn.textContent;
-      copyBtn.textContent = "Copied!";
-      setTimeout(() => {
-        copyBtn.textContent = originalText;
-      }, 1500);
-    }
-    
-    function showTab(containerId, tabName) {
-      // Hide all tab contents
-      const container = document.getElementById(containerId);
-      const tabContents = container.getElementsByClassName('tab-content');
-      for (let i = 0; i < tabContents.length; i++) {
-        tabContents[i].style.display = 'none';
-      }
-      
-      // Deactivate all tabs
-      const tabs = container.getElementsByClassName('tab');
-      for (let i = 0; i < tabs.length; i++) {
-        tabs[i].classList.remove('active');
-      }
-      
-      // Show the selected tab content and activate the tab
-      document.getElementById(`${containerId}-${tabName}`).style.display = 'block';
-      document.querySelector(`#${containerId} .tab[data-tab="${tabName}"]`).classList.add('active');
-    }
-    
-    function calculateFactorial() {
-      var n = parseInt(document.getElementById('factorialInput').value);
-      var result = document.getElementById('factorialResult');
-      
-      if (isNaN(n)) {
-        result.textContent = "Please enter a valid number.";
-        return;
-      }
-      
-      var factorial = 1;
-      if (n < 0) {
-        result.textContent = "Factorial is not defined for negative numbers.";
-      } else {
-        for (let i = 1; i <= n; i++) {
-          factorial *= i;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Vault | Premium Programming Resources</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3f37c9;
+            --accent: #4895ef;
+            --dark: #1b263b;
+            --light: #f8f9fa;
+            --success: #4cc9f0;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --transition: all 0.3s ease;
         }
-        result.textContent = "Factorial of " + n + " is " + factorial;
-      }
-    }
-    
-    window.onload = function() {
-      // Initialize all tabs
-      showTab('example1', 'code');
-      showTab('example2', 'code');
-      showTab('example3', 'code');
-      showTab('example4', 'code');
-    }
-  </script>
-</head>
-<body>
-  <h1>Interactive HTML Examples</h1>
-  
-  <div id="example1" class="code-container">
-    <div class="code-header">
-      <h2>1. Factorial Calculation in JavaScript</h2>
-      <button class="copy-btn" data-target="factorialCode" onclick="copyCode('factorialCode')">Copy Code</button>
-    </div>
-    <div class="tabs">
-      <div class="tab active" data-tab="code" onclick="showTab('example1', 'code')">Code</div>
-      <div class="tab" data-tab="result" onclick="showTab('example1', 'result')">Live Demo</div>
-    </div>
-    <div id="example1-code" class="tab-content">
-      <pre id="factorialCode">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;Factorial Calculator&lt;/title&gt;
-  &lt;script&gt;
-    function calculateFactorial() {
-      var n = parseInt(document.getElementById('factorialInput').value);
-      var result = document.getElementById('factorialResult');
-      
-      if (isNaN(n)) {
-        result.textContent = "Please enter a valid number.";
-        return;
-      }
-      
-      var factorial = 1;
-      if (n < 0) {
-        result.textContent = "Factorial is not defined for negative numbers.";
-      } else {
-        for (let i = 1; i <= n; i++) {
-          factorial *= i;
-        }
-        result.textContent = "Factorial of " + n + " is " + factorial;
-      }
-    }
-  &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div class="calculator"&gt;
-    &lt;h1&gt;Factorial Calculator&lt;/h1&gt;
-    &lt;div&gt;
-      &lt;input type="number" id="factorialInput" placeholder="Enter a number"&gt;
-      &lt;button onclick="calculateFactorial()"&gt;Calculate&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div id="factorialResult" class="result"&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
-    </div>
-    <div id="example1-result" class="tab-content result-container" style="display: none;">
-      <div>
-        <h1>Factorial Calculator</h1>
-        <div>
-          <input type="number" id="factorialInput" placeholder="Enter a number">
-          <button onclick="calculateFactorial()">Calculate</button>
-        </div>
-        <div id="factorialResult"></div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="example2" class="code-container">
-    <div class="code-header">
-      <h2>2. Inline CSS Example</h2>
-      <button class="copy-btn" data-target="inlineCssCode" onclick="copyCode('inlineCssCode')">Copy Code</button>
-    </div>
-    <div class="tabs">
-      <div class="tab active" data-tab="code" onclick="showTab('example2', 'code')">Code</div>
-      <div class="tab" data-tab="result" onclick="showTab('example2', 'result')">Result</div>
-    </div>
-    <div id="example2-code" class="tab-content">
-      <pre id="inlineCssCode">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Inline CSS Example&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1 style="color: blue;"&gt;Hello, world!&lt;/h1&gt;
-    &lt;p style="font-size: 20px; color: green;"&gt;This is a paragraph with inline CSS.&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
-    </div>
-    <div id="example2-result" class="tab-content result-container" style="display: none;">
-      <h1 style="color: blue;">Hello, world!</h1>
-      <p style="font-size: 20px; color: green;">This is a paragraph with inline CSS.</p>
-    </div>
-  </div>
-  
-  <div id="example3" class="code-container">
-    <div class="code-header">
-      <h2>3. Unordered List Example</h2>
-      <button class="copy-btn" data-target="unorderedListCode" onclick="copyCode('unorderedListCode')">Copy Code</button>
-    </div>
-    <div class="tabs">
-      <div class="tab active" data-tab="code" onclick="showTab('example3', 'code')">Code</div>
-      <div class="tab" data-tab="result" onclick="showTab('example3', 'result')">Result</div>
-    </div>
-    <div id="example3-code" class="tab-content">
-      <pre id="unorderedListCode">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;HTML List Examples&lt;/title&gt;
-  &lt;meta charset="UTF-8"&gt;
-  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;h1&gt;HTML List Examples&lt;/h1&gt;
-    
-    &lt;p&gt;
-      Lists are essential HTML elements for organizing information. Here are examples of 
-      different types of unordered lists with various bullet styles.
-    &lt;/p&gt;
-    
-    &lt;div&gt;
-      &lt;h2&gt;Circle Bullets&lt;/h2&gt;
-      &lt;div&gt;Fruits&lt;/div&gt;
-      &lt;ul type="circle"&gt;
-        &lt;li&gt;Apple&lt;/li&gt;
-        &lt;li&gt;Mango&lt;/li&gt;
-        &lt;li&gt;Orange&lt;/li&gt;
-        &lt;li&gt;Banana&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-    
-    &lt;div&gt;
-      &lt;h2&gt;Disc Bullets (Default)&lt;/h2&gt;
-      &lt;div&gt;Flowers&lt;/div&gt;
-      &lt;ul type="disc"&gt;
-        &lt;li&gt;Rose&lt;/li&gt;
-        &lt;li&gt;Lotus&lt;/li&gt;
-        &lt;li&gt;Tulip&lt;/li&gt;
-        &lt;li&gt;Sunflower&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-    
-    &lt;div&gt;
-      &lt;h2&gt;Square Bullets&lt;/h2&gt;
-      &lt;div&gt;Celestial Objects&lt;/div&gt;
-      &lt;ul type="square"&gt;
-        &lt;li&gt;Moon&lt;/li&gt;
-        &lt;li&gt;Star&lt;/li&gt;
-        &lt;li&gt;Planet&lt;/li&gt;
-        &lt;li&gt;Comet&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
-    </div>
-    <div id="example3-result" class="tab-content result-container" style="display: none;">
-      <div>
-        <h1>HTML List Examples</h1>
-        
-        <p>
-          Lists are essential HTML elements for organizing information. Here are examples of 
-          different types of unordered lists with various bullet styles.
-        </p>
-        
-        <div>
-          <h2>Circle Bullets</h2>
-          <div>Fruits</div>
-          <ul type="circle">
-            <li>Apple</li>
-            <li>Mango</li>
-            <li>Orange</li>
-            <li>Banana</li>
-          </ul>
-        </div>
-        
-        <div>
-          <h2>Disc Bullets (Default)</h2>
-          <div>Flowers</div>
-          <ul type="disc">
-            <li>Rose</li>
-            <li>Lotus</li>
-            <li>Tulip</li>
-            <li>Sunflower</li>
-          </ul>
-        </div>
-        
-        <div>
-          <h2>Square Bullets</h2>
-          <div>Celestial Objects</div>
-          <ul type="square">
-            <li>Moon</li>
-            <li>Star</li>
-            <li>Planet</li>
-            <li>Comet</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div id="example4" class="code-container">
-    <div class="code-header">
-      <h2>4. Simple Password Check</h2>
-      <button class="copy-btn" data-target="passwordCode" onclick="copyCode('passwordCode')">Copy Code</button>
-    </div>
-    <div class="tabs">
-      <div class="tab active" data-tab="code" onclick="showTab('example4', 'code')">Code</div>
-      <div class="tab" data-tab="result" onclick="showTab('example4', 'result')">Live Demo</div>
-    </div>
-    <div id="example4-code" class="tab-content">
-      <pre id="passwordCode">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Password Check&lt;/title&gt;
-    &lt;script type="text/javascript"&gt;
-        function chkPass() {
-            var first = document.frm.pass1.value;
-            var second = document.frm.pass2.value;
 
-            if (first == second) {
-                return true;
-            } else {
-                alert("Both Passwords should be the Same");
-                return false;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            opacity: 0.1;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .language-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn i {
+            margin-right: 0.5rem;
+        }
+
+        .code-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .code-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .code-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 1.2rem;
+            position: relative;
+        }
+
+        .card-header h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .language-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .code-container {
+            position: relative;
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+        }
+
+        pre {
+            color: #d4d4d4;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+            tab-size: 4;
+            white-space: pre-wrap;
+        }
+
+        .code-toolbar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(67, 97, 238, 0.1);
+        }
+
+        .btn i {
+            margin-right: 0.5rem;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--success);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast i {
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            color: var(--dark);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .code-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
             }
         }
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;form name="frm" action="#" onsubmit="return chkPass()"&gt;
-        &lt;font size="6"&gt;
-            Enter Password: &lt;input type="password" name="pass1"/&gt;&lt;br&gt;
-            Confirm Password: &lt;input type="password" name="pass2"/&gt;&lt;br&gt;
-            &lt;input type="submit" value="Submit"/&gt;
-        &lt;/font&gt;
-    &lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+
+        /* Syntax highlighting */
+        .keyword { color: #569cd6; }
+        .type { color: #4ec9b0; }
+        .string { color: #ce9178; }
+        .number { color: #b5cea8; }
+        .comment { color: #6a9955; }
+        .preprocessor { color: #9b9b9b; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Code Vault</h1>
+            <p class="subtitle">A premium collection of essential programming algorithms and implementations for developers</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="language-filter">
+            <button class="filter-btn active" data-filter="all"><i class="fas fa-code"></i> All</button>
+            <button class="filter-btn" data-filter="python"><i class="fab fa-python"></i> Python</button>
+            <button class="filter-btn" data-filter="cpp"><i class="fas fa-file-code"></i> C++</button>
+        </div>
+
+        <div class="code-grid">
+            <!-- Program 1: C++ Series Calculation -->
+            <div class="code-card" data-lang="cpp">
+                <div class="card-header">
+                    <span class="language-tag">C++</span>
+                    <h2>Series Calculator</h2>
+                    <p>S = 1² + 2² + ... + n²</p>
+                </div>
+                <div class="card-body">
+                    <div class="code-container">
+                        <pre id="code1">#include &lt;iostream&gt;
+#include &lt;conio.h&gt;
+using namespace std;
+
+class Series {
+private:
+    int n;
+    long sum;
+    long calculateSum() {
+        long result = 0;
+        for (int i = 1; i <= n; ++i) {
+            result += (long)i * i;
+        }
+        return result;
+    }
+public:
+    void readN() {
+        cout << "Enter the value of n: ";
+        cin >> n;
+    }
+    void computeSum() {
+        sum = calculateSum();
+    }
+    void displaySum() {
+        cout << "Sum of the series: " << sum << endl;
+    }
+};
+
+int main() {
+    clrscr();
+    Series s;
+    s.readN();
+    s.computeSum();
+    s.displaySum();
+    getch();
+    return 0;
+}</pre>
+                    </div>
+                    <div class="code-toolbar">
+                        <button class="btn btn-primary" onclick="copyCode('code1')">
+                            <i class="far fa-copy"></i> Copy Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 2: Python Stack Implementation -->
+            <div class="code-card" data-lang="python">
+                <div class="card-header">
+                    <span class="language-tag">Python</span>
+                    <h2>Stack Implementation</h2>
+                    <p>Push, Pop, Peek, and Traverse operations</p>
+                </div>
+                <div class="card-body">
+                    <div class="code-container">
+                        <pre id="code2">class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def push(self, item):
+        self.items.append(item)
+        print(f"Pushed: {item}")
+
+    def pop(self):
+        if self.is_empty():
+            print("Stack is empty. Cannot pop.")
+            return None
+        item = self.items.pop()
+        print(f"Popped: {item}")
+        return item
+
+    def peek(self):
+        if self.is_empty():
+            print("Stack is empty. No top item.")
+            return None
+        return self.items[-1]
+
+    def traverse(self):
+        if self.is_empty():
+            print("Stack is empty.")
+            return
+        print("Stack contents:")
+        for item in reversed(self.items):
+            print(item)
+
+if __name__ == "__main__":
+    stack = Stack()
+    stack.push(90)
+    stack.push(80)
+    stack.push(70)
+    stack.traverse()
+    stack.pop()
+    stack.traverse()
+    stack.pop()
+    stack.pop()
+    stack.traverse()</pre>
+                    </div>
+                    <div class="code-toolbar">
+                        <button class="btn btn-primary" onclick="copyCode('code2')">
+                            <i class="far fa-copy"></i> Copy Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 3: Python Naive Pattern Search -->
+            <div class="code-card" data-lang="python">
+                <div class="card-header">
+                    <span class="language-tag">Python</span>
+                    <h2>Pattern Search</h2>
+                    <p>Naive string matching algorithm</p>
+                </div>
+                <div class="card-body">
+                    <div class="code-container">
+                        <pre id="code3">def naive_pattern_search(text, pattern):
+    n = len(text)
+    m = len(pattern)
+    for i in range(n - m + 1):
+        j = 0
+        while j < m:
+            if text[i + j] != pattern[j]:
+                break
+            j += 1
+        if j == m:
+            print(f"Pattern found at index {i}")
+
+# Example usage
+text = "AABAACAADAABAABA"
+pattern = "AABA"
+naive_pattern_search(text, pattern)</pre>
+                    </div>
+                    <div class="code-toolbar">
+                        <button class="btn btn-primary" onclick="copyCode('code3')">
+                            <i class="far fa-copy"></i> Copy Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 4: C++ Prime Number Check -->
+            <div class="code-card" data-lang="cpp">
+                <div class="card-header">
+                    <span class="language-tag">C++</span>
+                    <h2>Prime Number Check</h2>
+                    <p>Determine if a number is prime</p>
+                </div>
+                <div class="card-body">
+                    <div class="code-container">
+                        <pre id="code4">#include &lt;iostream&gt;
+#include &lt;conio.h&gt;
+using namespace std;
+
+int main() {
+    int num, i;
+    clrscr();
+    cout << "Enter a positive integer: ";
+    cin >> num;
+    if (num <= 1) {
+        cout << num << " is not a prime number." << endl;
+        getch();
+        return 0;
+    }
+    for (i = 2; i <= num / 2; ++i) {
+        if (num % i == 0) {
+            cout << num << " is not a prime number." << endl;
+            getch();
+            return 0;
+        }
+    }
+    cout << num << " is a prime number." << endl;
+    getch();
+    return 0;
+}</pre>
+                    </div>
+                    <div class="code-toolbar">
+                        <button class="btn btn-primary" onclick="copyCode('code4')">
+                            <i class="far fa-copy"></i> Copy Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 5: Python Sorting Algorithms -->
+            <div class="code-card" data-lang="python">
+                <div class="card-header">
+                    <span class="language-tag">Python</span>
+                    <h2>Sorting Algorithms</h2>
+                    <p>Bubble, Selection, and Insertion Sort</p>
+                </div>
+                <div class="card-body">
+                    <div class="code-container">
+                        <pre id="code5"># Bubble Sort
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+    return arr
+
+# Selection Sort
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_index = i
+        for j in range(i + 1, n):
+            if arr[j] < arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    return arr
+
+# Insertion Sort
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
+
+# Example usage
+arr = [64, 25, 12, 22, 11]
+print("Bubble Sort Result:", bubble_sort(arr.copy()))
+print("Selection Sort Result:", selection_sort(arr.copy()))
+print("Insertion Sort Result:", insertion_sort(arr.copy()))</pre>
+                    </div>
+                    <div class="code-toolbar">
+                        <button class="btn btn-primary" onclick="copyCode('code5')">
+                            <i class="far fa-copy"></i> Copy Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program 6: Python Merge Sort -->
+            <div class="code-card" data-lang="python">
+                <div class="card-header">
+                    <span class="language-tag">Python</span>
+                    <h2>Merge Sort</h2>
+                    <p>Efficient divide-and-conquer algorithm</p>
+                </div>
+                <div class="card-body">
+                    <div class="code-container">
+                        <pre id="code6">def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+
+def merge(left, right):
+    sorted_arr = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            sorted_arr.append(left[i])
+            i += 1
+        else:
+            sorted_arr.append(right[j])
+            j += 1
+    sorted_arr.extend(left[i:])
+    sorted_arr.extend(right[j:])
+    return sorted_arr
+
+# Example usage
+arr = [38, 27, 43, 3, 9, 82, 10]
+print("Original Array:", arr)
+sorted_arr = merge_sort(arr)
+print("Sorted Array:", sorted_arr)</pre>
+                    </div>
+                    <div class="code-toolbar">
+                        <button class="btn btn-primary" onclick="copyCode('code6')">
+                            <i class="far fa-copy"></i> Copy Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="example4-result" class="tab-content result-container" style="display: none;">
-      <form name="frm" action="#" onsubmit="return chkPass()">
-        <font size="6">
-          Enter Password: <input type="password" name="pass1"/><br>
-          Confirm Password: <input type="password" name="pass2"/><br>
-          <input type="submit" value="Submit"/>
-        </font>
-      </form>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Code copied to clipboard!</span>
     </div>
-  </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 Code Vault | Premium Programming Resources</p>
+            <p>Designed with <i class="fas fa-heart" style="color: #e74c3c;"></i> for developers</p>
+        </div>
+    </footer>
+
+    <script>
+        // Copy code functionality
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const range = document.createRange();
+            range.selectNode(codeElement);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            
+            // Show toast notification
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                const cards = document.querySelectorAll('.code-card');
+                
+                cards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.dataset.lang === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                    
+                    // Add animation
+                    card.style.animation = 'none';
+                    setTimeout(() => {
+                        card.style.animation = 'fadeIn 0.5s ease';
+                    }, 10);
+                });
+            });
+        });
+
+        // Add syntax highlighting (basic implementation)
+        function applySyntaxHighlighting() {
+            const codeElements = document.querySelectorAll('pre');
+            codeElements.forEach(el => {
+                let code = el.innerHTML;
+                
+                // C++ highlighting
+                if (el.parentElement.parentElement.parentElement.dataset.lang === 'cpp') {
+                    code = code.replace(/#include/g, '<span class="preprocessor">#include</span>');
+                    code = code.replace(/using/g, '<span class="keyword">using</span>');
+                    code = code.replace(/namespace/g, '<span class="keyword">namespace</span>');
+                    code = code.replace(/class/g, '<span class="keyword">class</span>');
+                    code = code.replace(/void/g, '<span class="keyword">void</span>');
+                    code = code.replace(/int/g, '<span class="keyword">int</span>');
+                    code = code.replace(/long/g, '<span class="keyword">long</span>');
+                    code = code.replace(/for/g, '<span class="keyword">for</span>');
+                    code = code.replace(/if/g, '<span class="keyword">if</span>');
+                    code = code.replace(/else/g, '<span class="keyword">else</span>');
+                    code = code.replace(/return/g, '<span class="keyword">return</span>');
+                    code = code.replace(/cout/g, '<span class="keyword">cout</span>');
+                    code = code.replace(/cin/g, '<span class="keyword">cin</span>');
+                    code = code.replace(/endl/g, '<span class="keyword">endl</span>');
+                    code = code.replace(/"([^"]*)"/g, '<span class="string">"$1"</span>');
+                }
+                
+                // Python highlighting
+                if (el.parentElement.parentElement.parentElement.dataset.lang === 'python') {
+                    code = code.replace(/def/g, '<span class="keyword">def</span>');
+                    code = code.replace(/class/g, '<span class="keyword">class</span>');
+                    code = code.replace(/if/g, '<span class="keyword">if</span>');
+                    code = code.replace(/else/g, '<span class="keyword">else</span>');
+                    code = code.replace(/while/g, '<span class="keyword">while</span>');
+                    code = code.replace(/for/g, '<span class="keyword">for</span>');
+                    code = code.replace(/in/g, '<span class="keyword">in</span>');
+                    code = code.replace(/return/g, '<span class="keyword">return</span>');
+                    code = code.replace(/print/g, '<span class="keyword">print</span>');
+                    code = code.replace(/len/g, '<span class="keyword">len</span>');
+                    code = code.replace(/range/g, '<span class="keyword">range</span>');
+                    code = code.replace(/"([^"]*)"/g, '<span class="string">"$1"</span>');
+                    code = code.replace(/'([^']*)'/g, '<span class="string">\'$1\'</span>');
+                    code = code.replace(/#([^\n]*)/g, '<span class="comment">#$1</span>');
+                }
+                
+                el.innerHTML = code;
+            });
+        }
+
+        // Apply syntax highlighting when page loads
+        window.addEventListener('DOMContentLoaded', applySyntaxHighlighting);
+    </script>
 </body>
 </html>
