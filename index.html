@@ -662,46 +662,4 @@ print("Sorted Array:", sorted_arr)</pre>
                 // C++ highlighting
                 if (el.parentElement.parentElement.parentElement.dataset.lang === 'cpp') {
                     code = code.replace(/#include/g, '<span class="preprocessor">#include</span>');
-                    code = code.replace(/using/g, '<span class="keyword">using</span>');
-                    code = code.replace(/namespace/g, '<span class="keyword">namespace</span>');
-                    code = code.replace(/class/g, '<span class="keyword">class</span>');
-                    code = code.replace(/void/g, '<span class="keyword">void</span>');
-                    code = code.replace(/int/g, '<span class="keyword">int</span>');
-                    code = code.replace(/long/g, '<span class="keyword">long</span>');
-                    code = code.replace(/for/g, '<span class="keyword">for</span>');
-                    code = code.replace(/if/g, '<span class="keyword">if</span>');
-                    code = code.replace(/else/g, '<span class="keyword">else</span>');
-                    code = code.replace(/return/g, '<span class="keyword">return</span>');
-                    code = code.replace(/cout/g, '<span class="keyword">cout</span>');
-                    code = code.replace(/cin/g, '<span class="keyword">cin</span>');
-                    code = code.replace(/endl/g, '<span class="keyword">endl</span>');
-                    code = code.replace(/"([^"]*)"/g, '<span class="string">"$1"</span>');
-                }
-                
-                // Python highlighting
-                if (el.parentElement.parentElement.parentElement.dataset.lang === 'python') {
-                    code = code.replace(/def/g, '<span class="keyword">def</span>');
-                    code = code.replace(/class/g, '<span class="keyword">class</span>');
-                    code = code.replace(/if/g, '<span class="keyword">if</span>');
-                    code = code.replace(/else/g, '<span class="keyword">else</span>');
-                    code = code.replace(/while/g, '<span class="keyword">while</span>');
-                    code = code.replace(/for/g, '<span class="keyword">for</span>');
-                    code = code.replace(/in/g, '<span class="keyword">in</span>');
-                    code = code.replace(/return/g, '<span class="keyword">return</span>');
-                    code = code.replace(/print/g, '<span class="keyword">print</span>');
-                    code = code.replace(/len/g, '<span class="keyword">len</span>');
-                    code = code.replace(/range/g, '<span class="keyword">range</span>');
-                    code = code.replace(/"([^"]*)"/g, '<span class="string">"$1"</span>');
-                    code = code.replace(/'([^']*)'/g, '<span class="string">\'$1\'</span>');
-                    code = code.replace(/#([^\n]*)/g, '<span class="comment">#$1</span>');
-                }
-                
-                el.innerHTML = code;
-            });
-        }
-
-        // Apply syntax highlighting when page loads
-        window.addEventListener('DOMContentLoaded', applySyntaxHighlighting);
-    </script>
-</body>
-</html>
+                    code = code.rep
